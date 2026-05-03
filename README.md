@@ -1,4 +1,4 @@
-# Justyna Wankiewicz - CV online
+# Justyna Wankiewicz
 
 Statyczna strona portfolio/CV przygotowana do publikacji na GitHubie i Vercel.
 
