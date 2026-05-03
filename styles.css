@@ -542,7 +542,7 @@ a {
 
 mark {
   padding: 0 4px;
-  background: linear-gradient(transparent 45%, var(--lime) 45%);
+  background: linear-gradient(transparent 45%, var(--violet-soft) 45%);
   color: inherit;
 }
 
@@ -551,7 +551,7 @@ mark {
 }
 
 .course-card:nth-child(3) mark {
-  background: linear-gradient(transparent 45%, var(--violet-soft) 45%);
+  background: linear-gradient(transparent 45%, var(--lime-soft) 45%);
 }
 
 .course-card ul {
