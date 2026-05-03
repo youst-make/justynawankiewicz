@@ -1,0 +1,6 @@
+cd "/Users/Justyna/Documents/Codex/2026-05-03/chce-przygotowac-strone-osobista-takie-cv"
+
+git init
+git add .
+git commit -m "Initial personal website"
+git branch -M main
