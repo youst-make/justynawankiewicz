@@ -489,13 +489,7 @@ a {
 
 .project-card {
   padding: 26px;
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.38);
-  box-shadow: 0 22px 46px rgba(18, 18, 23, 0.24);
-}
-
-.project-card p {
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--ink);
 }
 
 .project-card span {
@@ -504,26 +498,25 @@ a {
   width: 42px;
   height: 42px;
   margin-bottom: 22px;
-  border: 0;
+  border: 2px solid var(--ink);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--ink);
+  background: #fff;
   font-weight: 900;
 }
 
 .project-purple {
-  background: linear-gradient(135deg, #5b3df4, #7d6cff);
+  background: #a991ff;
   transform: rotate(-2deg);
 }
 
 .project-blue {
   margin-left: 56px;
-  background: linear-gradient(135deg, #1457d9, #2f7cff);
+  background: #85d6ff;
   transform: rotate(1deg);
 }
 
 .project-lime {
-  background: linear-gradient(135deg, #5e7d00, #8baa00);
+  background: #ff79b8;
   transform: rotate(-1deg);
 }
 
