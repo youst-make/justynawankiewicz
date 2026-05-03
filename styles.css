@@ -280,7 +280,7 @@ a {
 .hero-copy h1 {
   max-width: 760px;
   font-size: clamp(4rem, 8vw, 7.4rem);
-  font-weight: 900;
+  font-weight: 400;
 }
 
 .eyebrow {
