@@ -4,13 +4,12 @@
   --ink: #121217;
   --muted: #5d6372;
   --line: #dfe3ec;
-  --blue: #246bff;
-  --cyan: #15b8d8;
-  --lime: #d8ff39;
-  --violet: #7657ff;
-  --pink: #ff66ae;
-  --mint: #34d7b4;
-  --navy: #102b5f;
+  --blue: #2563eb;
+  --lime: #d8ff3e;
+  --violet: #6d5dfc;
+  --blue-soft: #dbeafe;
+  --lime-soft: #f1ffc2;
+  --violet-soft: #ebe7ff;
   --radius: 8px;
   --shadow: 0 24px 80px rgba(24, 31, 57, 0.12);
 }
@@ -67,19 +66,33 @@ a {
 }
 
 .brand-mark {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 36px;
-  color: var(--ink);
-  background:
-    radial-gradient(circle at 18% 20%, var(--pink) 0 18%, transparent 19%),
-    radial-gradient(circle at 75% 28%, var(--violet) 0 18%, transparent 19%),
-    linear-gradient(135deg, var(--lime), #ffffff 50%, var(--cyan));
-  border: 2px solid var(--ink);
-  border-radius: var(--radius);
-  box-shadow: 5px 5px 0 var(--ink);
-  font-size: 0.78rem;
+  width: 54px;
+  height: 42px;
+  color: var(--blue);
+  background: linear-gradient(135deg, var(--lime), #ffffff 54%, var(--violet-soft));
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.16);
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 14px;
+  height: 14px;
+  background: var(--lime);
+  border-radius: 50%;
+}
+
+.brand-mark svg {
+  width: 38px;
+  height: 30px;
+  fill: currentColor;
 }
 
 .brand-name {
@@ -105,14 +118,15 @@ a {
 
 .nav-cta {
   padding: 10px 18px;
-  background: var(--ink);
+  background: var(--blue);
   color: #fff;
   border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.2);
 }
 
 .site-nav .nav-cta:hover {
   color: #fff;
-  background: var(--blue);
+  background: var(--violet);
 }
 
 .nav-toggle {
@@ -120,13 +134,32 @@ a {
 }
 
 .hero {
+  position: relative;
   min-height: calc(100vh - 74px);
   display: flex;
   align-items: center;
+  overflow: hidden;
   background:
-    linear-gradient(120deg, rgba(216, 255, 57, 0.22), transparent 34%),
-    linear-gradient(300deg, rgba(118, 87, 255, 0.12), transparent 38%),
+    linear-gradient(120deg, rgba(216, 255, 62, 0.22), transparent 34%),
+    linear-gradient(300deg, rgba(109, 93, 252, 0.12), transparent 38%),
     var(--bg);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 86px;
+  right: clamp(18px, 5vw, 70px);
+  width: 112px;
+  height: 112px;
+  background:
+    radial-gradient(circle at 72% 22%, var(--lime) 0 11px, transparent 12px),
+    radial-gradient(circle at 28% 72%, var(--blue) 0 16px, transparent 17px),
+    conic-gradient(from 25deg, transparent 0 18%, var(--violet) 18% 32%, transparent 32% 100%);
+  border-radius: 32px;
+  opacity: 0.78;
+  transform: rotate(10deg);
+  pointer-events: none;
 }
 
 .hero-grid {
@@ -157,7 +190,7 @@ a {
 
 .orbital-two {
   inset: 86px 4px 38px 86px;
-  background: #b7d7ff;
+  background: var(--blue-soft);
   mix-blend-mode: multiply;
   transform: rotate(9deg);
 }
@@ -181,7 +214,7 @@ a {
 .sticker-purple {
   top: 78px;
   left: 18px;
-  background: #a98cff;
+  background: var(--violet-soft);
   transform: rotate(-8deg);
 }
 
@@ -192,11 +225,11 @@ a {
   transform: rotate(9deg);
 }
 
-.sticker-mint {
+.sticker-blue {
   left: 96px;
   bottom: 74px;
   min-width: 220px;
-  background: var(--mint);
+  background: var(--blue-soft);
   transform: rotate(-4deg);
 }
 
@@ -221,7 +254,7 @@ a {
   z-index: 3;
   width: 46px;
   aspect-ratio: 1;
-  background: var(--pink);
+  background: var(--lime);
   clip-path: polygon(50% 0, 61% 33%, 98% 35%, 68% 56%, 79% 91%, 50% 70%, 21% 91%, 32% 56%, 2% 35%, 39% 33%);
 }
 
@@ -319,6 +352,12 @@ a {
 .button-primary {
   background: var(--blue);
   color: #fff;
+  border-color: transparent;
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.26);
+}
+
+.button-primary:hover {
+  box-shadow: 0 18px 36px rgba(37, 99, 235, 0.32);
 }
 
 .button-ghost {
@@ -328,9 +367,9 @@ a {
 .section-dark {
   color: #fff;
   background:
-    radial-gradient(circle at 18% 20%, rgba(21, 184, 216, 0.55), transparent 28%),
-    radial-gradient(circle at 85% 54%, rgba(118, 87, 255, 0.72), transparent 34%),
-    linear-gradient(135deg, #08244a, #143271 58%, #101a47);
+    radial-gradient(circle at 18% 20%, rgba(216, 255, 62, 0.16), transparent 30%),
+    radial-gradient(circle at 85% 54%, rgba(109, 93, 252, 0.72), transparent 34%),
+    linear-gradient(135deg, #0f2f74, #1c3f91 58%, #22175f);
 }
 
 .split {
@@ -361,8 +400,8 @@ a {
   height: 66px;
   margin-top: 40px;
   background:
-    linear-gradient(90deg, transparent, rgba(216, 255, 57, 0.85), transparent),
-    linear-gradient(90deg, transparent, rgba(118, 87, 255, 0.9), transparent);
+    linear-gradient(90deg, transparent, rgba(216, 255, 62, 0.85), transparent),
+    linear-gradient(90deg, transparent, rgba(109, 93, 252, 0.9), transparent);
   border-radius: 50%;
   transform: rotate(-5deg);
   filter: blur(1px);
@@ -412,7 +451,7 @@ a {
 
 .skill-card h3 {
   display: inline;
-  background: linear-gradient(transparent 50%, #bdefff 50%);
+  background: linear-gradient(transparent 50%, var(--blue-soft) 50%);
 }
 
 .accent-card {
@@ -420,12 +459,12 @@ a {
 }
 
 .accent-card h3 {
-  background: linear-gradient(transparent 50%, rgba(255, 102, 174, 0.65) 50%);
+  background: linear-gradient(transparent 50%, var(--violet-soft) 50%);
 }
 
 .section-color {
   color: #fff;
-  background: #2020dc;
+  background: linear-gradient(135deg, var(--blue), var(--violet));
 }
 
 .portfolio-grid {
@@ -466,18 +505,18 @@ a {
 }
 
 .project-purple {
-  background: #a991ff;
+  background: var(--violet-soft);
   transform: rotate(-2deg);
 }
 
 .project-blue {
   margin-left: 56px;
-  background: #85d6ff;
+  background: var(--blue-soft);
   transform: rotate(1deg);
 }
 
-.project-pink {
-  background: #ff79b8;
+.project-lime {
+  background: var(--lime-soft);
   transform: rotate(-1deg);
 }
 
@@ -490,29 +529,29 @@ a {
 .course-card {
   min-height: 310px;
   padding: 34px 30px;
-  background: #e8f5ff;
+  background: var(--blue-soft);
 }
 
 .course-card:nth-child(2) {
-  background: #ecf7d8;
+  background: var(--lime-soft);
 }
 
 .course-card:nth-child(3) {
-  background: #f1e9ff;
+  background: var(--violet-soft);
 }
 
 mark {
   padding: 0 4px;
-  background: linear-gradient(transparent 45%, var(--pink) 45%);
+  background: linear-gradient(transparent 45%, var(--lime) 45%);
   color: inherit;
 }
 
 .course-card:nth-child(2) mark {
-  background: linear-gradient(transparent 45%, var(--mint) 45%);
+  background: linear-gradient(transparent 45%, var(--blue-soft) 45%);
 }
 
 .course-card:nth-child(3) mark {
-  background: linear-gradient(transparent 45%, #bda8ff 45%);
+  background: linear-gradient(transparent 45%, var(--violet-soft) 45%);
 }
 
 .course-card ul {
@@ -699,7 +738,7 @@ mark {
     font-size: 0.88rem;
   }
 
-  .sticker-mint {
+  .sticker-blue {
     left: 52px;
     min-width: 188px;
   }
