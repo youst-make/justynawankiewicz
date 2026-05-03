@@ -278,8 +278,8 @@ a {
 }
 
 .hero-copy h1 {
-  max-width: 760px;
-  font-size: clamp(2rem, 4vw, 7.4rem);
+  max-width: 560px;
+  font-size: clamp(2rem, 4vw, 5.4rem);
   font-weight: 500;
 }
 
