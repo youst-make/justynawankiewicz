@@ -278,9 +278,9 @@ a {
 }
 
 .hero-copy h1 {
-  max-width: 760px;
+  max-width: 560px;
   font-size: clamp(4rem, 8vw, 7.4rem);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .eyebrow {
